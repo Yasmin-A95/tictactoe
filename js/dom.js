@@ -13,7 +13,7 @@
 // render();
 // the things
 const tiles = $(".tiles");
-
+const button = $("button");
 // could also do like this
 // let boardState = [*,*,*,*,*,*,*,*] since I know how many tiles there are..
 
@@ -54,6 +54,16 @@ const clickFunction = function (event) {
 };
 
 tiles.on("click", clickFunction);
+//
+button.on("click", function () {
+  boardState = ["*", "*", "*", "*", "*", "*", "*", "*", "*"];
+  tiles.each(function (index, tile) {
+    $(tile).text("");
+  });
+  turn = Player_X;
+  gameOverArea.removeClass("visible");
+  gameOverArea.addClass("hidden");
+});
 
 // I may need to call render in every single event handler in here
 
