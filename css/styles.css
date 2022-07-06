@@ -35,7 +35,7 @@ body {
     position: relative;
   }
   
-  .tile {
+  .tiles {
     color: currentColor;
     font-size: 2em;
     display: flex;
