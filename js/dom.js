@@ -13,12 +13,7 @@
 // render();
 // the things
 const tiles = $(".tiles");
-const Player_X = "X";
-const Player_O = "O";
-let turn = Player_X;
 
-let boardState = Array(tiles.length);
-boardState.fill(null);
 // could also do like this
 // let boardState = [*,*,*,*,*,*,*,*] since I know how many tiles there are..
 
@@ -27,6 +22,15 @@ const gameOverArea = $("#game-over-area");
 const gameOverText = $("#game-over-text");
 
 const playAgainButton = $("#play-again");
+
+const gameOverScreen = function (winner) {
+  let text = "Draw!";
+  if (winner != "Draw") {
+    text = `winner is ${winner}`;
+  }
+  gameOverArea.addClass("visible");
+  gameOverText.text(text);
+};
 
 const clickFunction = function (event) {
   if (gameOverArea.is(":visible")) {
@@ -46,6 +50,7 @@ const clickFunction = function (event) {
     boardState[tileNumber] = Player_O;
     turn = Player_X;
   }
+  checkWinner();
 };
 
 tiles.on("click", clickFunction);
