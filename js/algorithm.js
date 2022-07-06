@@ -1,15 +1,20 @@
-// let thisGuy = wins[num1];
-// Math.floor(Math.random() * thisGuy.length);
+/*
+if (2 / 3 of any wins ) {
+        place the third    
+   } else if (opponent has two in a row) {
+     block the third
+   } else {
+    make a random move
+   }
+   seems like a pretty good start even with those few if else's
 
-// num1 is one of the arrays in wins's indicies number
-// so its like wins[1] .. or whatever other one
-// then thisGuy is wins[1][2] .. or something. Yeah?
-// if boardState[wins[1][2]] "*" {
-// do stuff
-// } else {
-//         try again;
-//}
-//
+   find a way to iterate through and compare moves until one matches the condition, 
+   if none match all the way up to moves.length ... exit that conditional and move on to the next
+
+   **so it'll get a move, compare it to board state to see if it's possible **
+   
+   all the way through wins.length (if one isn't found earlier and thus leaving the conditional)
+*/
 
 const oRandomMove = function () {
   const num1 = Math.floor(Math.random() * wins.length);
