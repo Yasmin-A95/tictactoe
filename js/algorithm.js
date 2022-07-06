@@ -20,7 +20,7 @@ const oRandomMove = function () {
     boardState[move] = Player_O;
     $(tiles[move]).text(Player_O);
     turn = Player_X;
-  } else {
+  } else if (boardState.includes("*")) {
     oRandomMove();
   }
 };
