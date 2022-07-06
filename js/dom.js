@@ -45,6 +45,7 @@ const clickFunction = function (event) {
     tile.innerText = Player_X;
     boardState[tileNumber] = Player_X;
     turn = Player_O;
+    oRandomMove();
   } else {
     tile.innerText = Player_O;
     boardState[tileNumber] = Player_O;

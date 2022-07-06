@@ -11,7 +11,7 @@
 //}
 //
 
-const computerPlayer_ORandom = function () {
+const oRandomMove = function () {
   const num1 = Math.floor(Math.random() * wins.length);
   const num2 = Math.floor(Math.random() * wins[num1].length);
 
@@ -19,7 +19,8 @@ const computerPlayer_ORandom = function () {
   if (boardState[move] === "*") {
     boardState[move] = Player_O;
     $(tiles[move]).text(Player_O);
-    return (turn = Player_X);
+    turn = Player_X;
+  } else {
+    oRandomMove();
   }
 };
-computerPlayer_ORandom();
