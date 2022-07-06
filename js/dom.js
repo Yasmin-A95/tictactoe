@@ -9,32 +9,48 @@
 // in render I'll use jQuery to grab parts of the dom ${likethis}
 // and update the display like this $("things")
 // $(document).ready(function () {
-  //
-  // render();
-  // the things
-  const tiles = $(".tiles");
-  const Player_X = "X";
-  const Player_O = "O";
-  let turn = Player_X;
+//
+// render();
+// the things
+const tiles = $(".tiles");
+const Player_X = "X";
+const Player_O = "O";
+let turn = Player_X;
 
-  let boardState = Array(tiles.length);
-  boardState.fill(null);
-  // could also do like this
-  // let boardState = [*,*,*,*,*,*,*,*] since I know how many tiles there are..
+let boardState = Array(tiles.length);
+boardState.fill(null);
+// could also do like this
+// let boardState = [*,*,*,*,*,*,*,*] since I know how many tiles there are..
 
-  const gameOverArea = $("#game-over-area");
+const gameOverArea = $("#game-over-area");
 
-  const gameOverText = $("#game-over-text");
+const gameOverText = $("#game-over-text");
 
-  const playAgainButton = $("#play-again");
+const playAgainButton = $("#play-again");
 
-  const clickFunction = function () {
-    alert("hi");
-  };
+const clickFunction = function (event) {
+  if (gameOverArea.is(":visible")) {
+    return;
+  }
+  const tile = event.target;
+  const tileNumber = tile.dataset.index;
+  if (tile.innerText != "") {
+    return;
+  }
+  if (turn === Player_X) {
+    tile.innerText = Player_X;
+    boardState[tileNumber] = Player_X;
+    turn = Player_O;
+  } else {
+    tile.innerText = Player_O;
+    boardState[tileNumber] = Player_O;
+    turn = Player_X;
+  }
+};
 
-  tiles.on("click", clickFunction);
+tiles.on("click", clickFunction);
 
-  // I may need to call render in every single event handler in here
+// I may need to call render in every single event handler in here
 
 // });
 
