@@ -1,6 +1,5 @@
-let num1 = Math.floor(Math.random() * wins.length);
-let thisGuy = wins[num1];
-Math.floor(Math.random() * thisGuy.length);
+// let thisGuy = wins[num1];
+// Math.floor(Math.random() * thisGuy.length);
 
 // num1 is one of the arrays in wins's indicies number
 // so its like wins[1] .. or whatever other one
@@ -11,3 +10,16 @@ Math.floor(Math.random() * thisGuy.length);
 //         try again;
 //}
 //
+
+const computerPlayer_ORandom = function () {
+  const num1 = Math.floor(Math.random() * wins.length);
+  const num2 = Math.floor(Math.random() * wins[num1].length);
+
+  const move = wins[num1][num2];
+  if (boardState[move] === "*") {
+    boardState[move] = Player_O;
+    $(tiles[move]).text(Player_O);
+    return (turn = Player_X);
+  }
+};
+computerPlayer_ORandom();
