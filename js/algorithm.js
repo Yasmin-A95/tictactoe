@@ -20,8 +20,9 @@ const oRandomMove = function () {
   const num1 = Math.floor(Math.random() * wins.length);
   const num2 = Math.floor(Math.random() * wins[num1].length);
 
-  const move = wins[num1][num2];
+  const move = wins[num1][num2]; //because that's this, it's just taking it from the wins algorithm for no real reason at this point
   if (boardState[move] === "*") {
+    //boardstate[move] ends up just being the tilenumber
     boardState[move] = Player_O;
     $(tiles[move]).text(Player_O);
     turn = Player_X;
@@ -29,3 +30,24 @@ const oRandomMove = function () {
     oRandomMove();
   }
 };
+
+//boardstate[move] is just a tilenumber
+
+//it's getting it via wins[num1][num2] for no real reason at this point, i was just thinking of the unbeatable algorithm needing to go over that array.
+
+const unbeatableMoves = function () {
+  for (const win of wins) {
+    const tileVal0 = boardState[win[0]];
+    const tileVal1 = boardState[win[1]];
+    const tileVal2 = boardState[win[2]];
+    if (
+      (tileVal0 === tileVal1 ||
+        tileVal1 === tileVal2 ||
+        tileVal2 === tileVal0) &&
+      [tileVal0, tileVal1, tileVal2].includes(Player_O) &&
+      [tileVal0, tileVal1, tileVal2].includes("*")
+    ) {
+    }
+  }
+};
+
