@@ -41,14 +41,18 @@ const unbeatableMoves = function () {
     const tileVal0 = boardState[win[0]];
     const tileVal1 = boardState[win[1]];
     const tileVal2 = boardState[win[2]];
-    //names so its less fuckedup confusing to read
+
+    //names so its less confusing to read
     const twoTilesMatchWinStrategy =
       tileVal0 === tileVal1 || tileVal1 === tileVal2 || tileVal2 === tileVal0;
     const areTheyPlayer_0 = [tileVal0, tileVal1, tileVal2].includes(Player_O);
     const isThereAFreeMove = [tileVal0, tileVal1, tileVal2].includes("*");
+
+    //ok now if else
     if (twoTilesMatchWinStrategy && isThereAFreeMove && areTheyPlayer_0) {
+      let move = [tileVal0, tileVal1, tileVal2].indexOf("*");
+    } else {
+      alert("test failed");
     }
   }
 };
-
-
