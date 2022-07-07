@@ -37,17 +37,18 @@ const oRandomMove = function () {
 
 const unbeatableMoves = function () {
   for (const win of wins) {
+    //win array position 0-2
     const tileVal0 = boardState[win[0]];
     const tileVal1 = boardState[win[1]];
     const tileVal2 = boardState[win[2]];
-    if (
-      (tileVal0 === tileVal1 ||
-        tileVal1 === tileVal2 ||
-        tileVal2 === tileVal0) &&
-      [tileVal0, tileVal1, tileVal2].includes(Player_O) &&
-      [tileVal0, tileVal1, tileVal2].includes("*")
-    ) {
+    //names so its less fuckedup confusing to read
+    const twoTilesMatchWinStrategy =
+      tileVal0 === tileVal1 || tileVal1 === tileVal2 || tileVal2 === tileVal0;
+    const areTheyPlayer_0 = [tileVal0, tileVal1, tileVal2].includes(Player_O);
+    const isThereAFreeMove = [tileVal0, tileVal1, tileVal2].includes("*");
+    if (twoTilesMatchWinStrategy && isThereAFreeMove && areTheyPlayer_0) {
     }
   }
 };
+
 
