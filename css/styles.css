@@ -52,7 +52,7 @@ body {
   
   #game-over-area {
     text-align: center;
-    border: indigo 8px solid;
+    border: currentColor;
     padding: 50px;
     width: 50%;
     margin-top: 50px;

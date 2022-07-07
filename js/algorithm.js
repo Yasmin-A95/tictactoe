@@ -51,8 +51,19 @@ const unbeatableMoves = function () {
     //ok now if else
     if (twoTilesMatchWinStrategy && isThereAFreeMove && areTheyPlayer_0) {
       let move = [tileVal0, tileVal1, tileVal2].indexOf("*");
+      move = Player_O;
+      $(tiles[move]).text(Player_O);
+      turn = Player_X;
     } else {
+      oRandomMove();
       alert("test failed");
+      console.log(move);
+      return;
     }
   }
 };
+/* 
+so there are fewer and fewer possible moves as the game progresses, in fact it becomes significantly fewer with every move,
+
+also certain moves become increasingly important to make the further the game progresses 
+*/

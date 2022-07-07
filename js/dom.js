@@ -14,6 +14,7 @@
 // the things
 const tiles = $(".tiles");
 const button = $("button");
+let turn = Player_X;
 // could also do like this
 // let boardState = [*,*,*,*,*,*,*,*] since I know how many tiles there are..
 
@@ -45,12 +46,13 @@ const clickFunction = function (event) {
     tile.innerText = Player_X;
     boardState[tileNumber] = Player_X;
     turn = Player_O;
-    oRandomMove();
-  } else {
-    tile.innerText = Player_O;
-    boardState[tileNumber] = Player_O;
-    turn = Player_X;
+    unbeatableMoves();
   }
+  //  else {
+  //   tile.innerText = Player_O;
+  //   boardState[tileNumber] = Player_O;
+  //   turn = Player_X;
+  // }
   checkWinner();
 };
 

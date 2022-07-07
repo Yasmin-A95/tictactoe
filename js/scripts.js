@@ -8,7 +8,7 @@
 //deploy every significant change
 const Player_X = "X";
 const Player_O = "O";
-let turn = Player_X;
+
 
 const wins = [
   [0, 1, 2],
