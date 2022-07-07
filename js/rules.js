@@ -22,21 +22,27 @@ const wins = [
   [2, 4, 6],
 ];
 const winnerArr = [];
-boardState = ["*", "*", "*", "*", "*", "*", "*", "*", "*"];
+boardState = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+let score = 0;
 
 const checkWinner = function () {
   for (const win of wins) {
     const tileVal0 = boardState[win[0]];
     const tileVal1 = boardState[win[1]];
     const tileVal2 = boardState[win[2]];
-    if (tileVal0 != "*" && tileVal0 === tileVal1 && tileVal0 === tileVal2) {
+
+    if (tileVal0 === turn && tileVal0 === tileVal1 && tileVal0 === tileVal2) {
       winnerArr.push(tileVal0);
       gameOverScreen(tileVal0);
-      return;
+      if (tileVal0 === Player_O) {
+        return (score += 10);
+      }
+      if (tileVal0 === Player_X) {
+        return (score -= 10);
+      }
     }
   }
-  if (!boardState.includes("*")) {
+  if (!isDraw(boardState)) {
     gameOverScreen("Draw");
   }
 };
-
