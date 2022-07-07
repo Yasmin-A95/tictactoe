@@ -31,11 +31,9 @@ const oRandomMove = function () {
   }
 };
 
-//boardstate[move] is just a tilenumber
-
-//it's getting it via wins[num1][num2] for no real reason at this point, i was just thinking of the unbeatable algorithm needing to go over that array.
-
 const unbeatableMoves = function () {
+  let winningMove;
+
   for (const win of wins) {
     //win array position 0-2
     const tileVal0 = boardState[win[0]];
@@ -47,23 +45,11 @@ const unbeatableMoves = function () {
       tileVal0 === tileVal1 || tileVal1 === tileVal2 || tileVal2 === tileVal0;
     const areTheyPlayer_0 = [tileVal0, tileVal1, tileVal2].includes(Player_O);
     const isThereAFreeMove = [tileVal0, tileVal1, tileVal2].includes("*");
-
-    //ok now if else
-    if (twoTilesMatchWinStrategy && isThereAFreeMove && areTheyPlayer_0) {
-      let move = [tileVal0, tileVal1, tileVal2].indexOf("*");
-      move = Player_O;
-      $(tiles[move]).text(Player_O);
-      turn = Player_X;
-    } else {
-      oRandomMove();
-      alert("test failed");
-      console.log(move);
-      return;
+    if (twoTilesMatchWinStrategy && areTheyPlayer_0 && isThereAFreeMove) {
+      winningMove = true;
     }
   }
-};
-/* 
-so there are fewer and fewer possible moves as the game progresses, in fact it becomes significantly fewer with every move,
+  console.log(winningMove);
 
-also certain moves become increasingly important to make the further the game progresses 
-*/
+  oRandomMove();
+};
