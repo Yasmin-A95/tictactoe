@@ -47,9 +47,16 @@ const unbeatableMoves = function () {
     const isThereAFreeMove = [tileVal0, tileVal1, tileVal2].includes("*");
     if (twoTilesMatchWinStrategy && areTheyPlayer_0 && isThereAFreeMove) {
       winningMove = true;
+      let indexOfFreeTile = [tileVal0, tileVal1, tileVal2].indexOf("*");
+      winningMove = win[indexOfFreeTile];
     }
   }
   console.log(winningMove);
 
   oRandomMove();
 };
+
+for (i = 0; i < wins.length; i++) {
+  let thething;
+  thething = wins[i];
+}
