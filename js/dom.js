@@ -24,6 +24,8 @@ const gameOverText = $("#game-over-text");
 
 const playAgainButton = $("#play-again");
 
+const gameScore = $("#game-score");
+
 const gameOverScreen = function (winner) {
   let text = "Draw!";
   if (winner != "Draw") {
@@ -31,6 +33,7 @@ const gameOverScreen = function (winner) {
   }
   gameOverArea.addClass("visible");
   gameOverText.text(text);
+  gameScore.text(winnerArr);
 };
 
 const clickFunction = function (event) {
@@ -46,7 +49,7 @@ const clickFunction = function (event) {
     tile.innerText = Player_X;
     boardState[tileNumber] = Player_X;
     turn = Player_O;
-    unbeatableMoves();
+    oRandomMove();
   }
   //  else {
   //   tile.innerText = Player_O;

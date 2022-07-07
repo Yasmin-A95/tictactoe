@@ -9,7 +9,6 @@
 const Player_X = "X";
 const Player_O = "O";
 
-
 const wins = [
   [0, 1, 2],
   [3, 4, 5],
@@ -22,7 +21,7 @@ const wins = [
   [0, 4, 8],
   [2, 4, 6],
 ];
-
+const winnerArr = [];
 boardState = ["*", "*", "*", "*", "*", "*", "*", "*", "*"];
 
 const checkWinner = function () {
@@ -31,6 +30,7 @@ const checkWinner = function () {
     const tileVal1 = boardState[win[1]];
     const tileVal2 = boardState[win[2]];
     if (tileVal0 != "*" && tileVal0 === tileVal1 && tileVal0 === tileVal2) {
+      winnerArr.push(tileVal0);
       gameOverScreen(tileVal0);
       return;
     }
@@ -39,3 +39,4 @@ const checkWinner = function () {
     gameOverScreen("Draw");
   }
 };
+
