@@ -3,10 +3,20 @@
 //lots of event handlers and all the dom manipulation
 
 //deploy every significant change
+// const render = function () {
+//this handy render function will update every single part of  DOM with the latest values from the board
 
+// in render I'll use jQuery to grab parts of the dom ${likethis}
+// and update the display like this $("things")
+// $(document).ready(function () {
+//
+// render();
+// the things
 const tiles = $(".tiles");
 const button = $("button");
 let turn = Player_X;
+// could also do like this
+// let boardState = [*,*,*,*,*,*,*,*] since I know how many tiles there are..
 
 const gameOverArea = $("#game-over-area");
 
@@ -52,7 +62,7 @@ const clickFunction = function (event) {
 tiles.on("click", clickFunction);
 //
 button.on("click", function () {
-  boardState = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  boardState = ["*", "*", "*", "*", "*", "*", "*", "*", "*"];
   tiles.each(function (index, tile) {
     $(tile).text("");
   });
@@ -61,8 +71,8 @@ button.on("click", function () {
   gameOverArea.addClass("hidden");
 });
 
-const isDraw = function (boardState) {
-  for (let i = 0; i < boardState.length; i++) {
-    
-  }
-};
+// I may need to call render in every single event handler in here
+
+// });
+
+// };

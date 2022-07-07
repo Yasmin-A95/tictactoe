@@ -1,39 +1,10 @@
-# A hash means the rest of this line is a heading
+#My Aim
 
-## two is a subheading
+1.	Get the mvp version to work. Two players, both controlled by the one computer, click for o click for x, winner declared. 
+2.	Build an algorithm opponent. 
+3.	Build an unbeatable algorithm opponent.
+4.	Give it a personality, have it throw insults at you while it beats you.
+5.	Add fun animations
+6.	Add a second personality, maybe one that throws Shakespearian insults at you or something while medieval Eminem loops in the background. 
 
-### etc
-
-heading alt for h2
--------
-
-superheading alt for h1
-============
-
-New lines auto seperate your paragraphs.
-
-
-welcome to my project 0
-
-
-## textual emphasis
-
-here is a paragraph with bold and italic text.
-
-*bold*
-**italic
-
-- groucho 
-- harpo 
-- chico
-
-links go in [for the name] and then (the destination or actual http: www.sitegohere.com)
-
-we want to link to our site in our readme
-
-![img alt text](destination)
-
-````javascript
-const hey = function () {
-    console.log("hello")
-}
+I got up to level three of my aims, and went down a long rabbit hole trying to get the minimax algorithm integrated into my program. I had a great time trying it, but no dice.
