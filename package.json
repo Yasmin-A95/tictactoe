@@ -1,0 +1,23 @@
+{
+  "name": "project0",
+  "version": "1.0.0",
+  "description": "1. Get the mvp version to work. Two players, both controlled by the one computer, click for o click for x, winner declared. 2. Build an algorithm opponent. 3. Build an unbeatable algorithm opponent. 4. Give it a personality, have it throw insults at you while it beats you. 5. Add fun animations 6. Add a second personality, maybe one that throws Shakespearian insults at you or something while medieval Eminem loops in the background.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yasmin-A95/tictactoe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yasmin-A95/tictactoe/issues"
+  },
+  "homepage": "https://github.com/Yasmin-A95/tictactoe#readme",
+  "devDependencies": {
+    "jest": "^29.2.1"
+  }
+}

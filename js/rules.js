@@ -13,8 +13,10 @@ const wins = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+
 const winnerArr = [];
 boardState = ["*", "*", "*", "*", "*", "*", "*", "*", "*"];
+module.exports = boardState
 
 const checkWinner = function () {
   for (const win of wins) {
@@ -27,7 +29,7 @@ const checkWinner = function () {
       return;
     }
   }
-  if (!boardState.includes("*")) {
+  if (turns.length === 5) {
     gameOverScreen("Draw");
   }
 };

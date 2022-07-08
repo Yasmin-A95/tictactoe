@@ -1,5 +1,5 @@
 //this knows NOTHING about rules it simply connects the DOM to the rules in scripts.js
-
+let turns = [];
 const tiles = $(".tiles");
 const button = $("button");
 let turn = Player_X;
@@ -35,6 +35,7 @@ const clickFunction = function (event) {
     tile.innerText = Player_X;
     boardState[tileNumber] = Player_X;
     turn = Player_O;
+    turns.push(1);
     oRandomMove();
   }
   checkWinner();
@@ -44,6 +45,7 @@ tiles.on("click", clickFunction);
 //
 button.on("click", function () {
   boardState = ["*", "*", "*", "*", "*", "*", "*", "*", "*"];
+  turns = [];
   tiles.each(function (index, tile) {
     $(tile).text("");
   });
@@ -51,5 +53,3 @@ button.on("click", function () {
   gameOverArea.removeClass("visible");
   gameOverArea.addClass("hidden");
 });
-
-
