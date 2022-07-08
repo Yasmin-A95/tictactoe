@@ -10,5 +10,5 @@
 Status: Up to level three. From there the project went down a deep rabbit hole when attempting the minimax algorithm as an AI unbeatable opponent. No dice.
 
 # Instructions 
-
+Play the game [here] https://yasmin-a95.github.io/tictactoe/
 Click the tile you want to make your move on. Wait 0.1 seconds for the virtual opponant to take their turn, repeat until victory draw or loss. Press the play again button should you wish to play again. 
