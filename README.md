@@ -7,10 +7,16 @@
 5. Add fun animations
 6. Add a second personality, maybe one that throws Shakespearian insults at you or something while medieval Eminem loops in the background.
 
-Status: Up to level three. From there the project went down a deep rabbit hole when attempting the minimax algorithm as an AI unbeatable opponent. No dice.
+## Project Status 
 
-# Instructions
+Up to item three in priject aim. From there the project went down a deep rabbit hole when attempting the minimax algorithm as an AI unbeatable opponent. No dice.
+
+## Instructions
 
 Play the game [here](https://yasmin-a95.github.io/tictactoe/)
 
 Click the tile you want to make your move on. Wait 0.1 seconds for the virtual opponant to take their turn, repeat until victory draw or loss. Press the play again button should you wish to play again.
+
+## Read about My Minimax Attempt
+
+In this blog [post](https://yasmina95.hashnode.dev/the-minimax-algorithm-is-my-boyfriend-now)
